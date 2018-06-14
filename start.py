@@ -30,4 +30,4 @@ while True:
     
     reading = 0.0
     
-    time.sleep(0.5);
+    time.sleep(5);
