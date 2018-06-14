@@ -13,7 +13,8 @@ def request_reading():
     sys.stdout.flush()
     return reading
 
-bus.write_byte(SLAVE_ADDRESS, ord('l'))
+reading = request_reading()
+print(reading)
 """
 while True:
     command = raw_input("Enter command: ")
