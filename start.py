@@ -28,4 +28,6 @@ while True:
     #url = "https://api.thingspeak.com/update?api_key=REQ34H0DMYV3WYPV&field1=" + str(reading)
     #response = requests.request("GET", url)
     
-    reading = -1
+    reading = 0.0
+    
+    time.sleep(0.5);
