@@ -15,6 +15,7 @@ reading = request_reading()
 print(reading)
 sys.stdout.flush()
 
-url = "https://api.thingspeak.com/update?api_key=REQ34H0DMYV3WYPV&field1=" + str(reading)
-response = requests.request("GET", url)
-print(response.text)
+while True:
+    url = "https://api.thingspeak.com/update?api_key=REQ34H0DMYV3WYPV&field1=" + str(reading)
+    response = requests.request("GET", url)
+    print(response.text)
