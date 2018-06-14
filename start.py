@@ -13,6 +13,8 @@ def request_reading():
     sys.stdout.flush()
     return reading
 
+bus.write_byte(SLAVE_ADDRESS, ord('l'))
+"""
 while True:
     command = raw_input("Enter command: ")
     if command == 'l':
@@ -22,10 +24,11 @@ while True:
         while True:
             reading = request_reading()
             if thingspeak_get == 15:
-                url = "https://api.thingspeak.com/update?api_key=19HM7AWYBUK$
+                url = "https://api.thingspeak.com/update?api_key=REQ34H0DMYV3WYPV&field1=0"
                 response = requests.request("GET", url)
                 print response.text,
                 print '        '
                 thingspeak_get = 0
             time.sleep(1)
             thingspeak_get += 1
+"""
