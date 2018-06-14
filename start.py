@@ -17,15 +17,12 @@ def get_float(data, index):
 
 def request_reading():
     data = get_data()
-    print(get_float(data, 0))
-    print(get_float(data, 1))
-    return 50
-
+    return get_float(data, 0)
 
 while True:
 
     reading = request_reading()
-    #print(reading)
+    print(reading)
     sys.stdout.flush()
 
     #url = "https://api.thingspeak.com/update?api_key=REQ34H0DMYV3WYPV&field1=" + str(reading)
