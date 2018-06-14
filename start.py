@@ -9,12 +9,11 @@ SLAVE_ADDRESS = 0x04
 
 def request_reading():
     reading = int(bus.read_byte(SLAVE_ADDRESS))
-    print 'reading...\r',
-    sys.stdout.flush()
     return reading
 
 reading = request_reading()
 print(reading)
+sys.stdout.flush()
 """
 while True:
     command = raw_input("Enter command: ")
