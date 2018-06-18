@@ -16,8 +16,10 @@ def get_float(data, index):
     return struct.unpack('f', "".join(map(chr, bytes)))[0]
 
 def request_reading():
-    data = get_data()
-    return get_float(data, 0)
+    reading = int(bus.read_byte(SLAVE_ADDRESS))
+    return reading
+    #data = get_data()
+    #return get_float(data, 0)
 
 while True:
 
@@ -25,9 +27,9 @@ while True:
     print(reading)
     sys.stdout.flush()
 
-    #url = "https://api.thingspeak.com/update?api_key=REQ34H0DMYV3WYPV&field1=" + str(reading)
-    #response = requests.request("GET", url)
+    url = "https://api.thingspeak.com/update?api_key=REQ34H0DMYV3WYPV&field1=" + str(reading)
+    response = requests.request("GET", url)
     
     reading = 0.0
     
-    time.sleep(5);
+    time.sleep(30);
